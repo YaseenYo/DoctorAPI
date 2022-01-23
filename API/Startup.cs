@@ -35,7 +35,7 @@ namespace API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
             });
             services.AddDbContext<DataContext>(opt => {
-                opt.UseSqlite(_config.GetConnectionString("DBConnection"));
+                opt.UseSqlServer(_config.GetConnectionString("DBConnection"));
             });
             services.AddCors(opt => {
                 opt.AddPolicy("CorsPolicy",policy => {
